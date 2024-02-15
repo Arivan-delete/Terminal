@@ -19,17 +19,16 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Test()
-//            TerminalTheme {
-//                val viewModel: TerminalViewModel = viewModel()
-//                val screenState = viewModel.state.collectAsState()
-//                when(val currentState = screenState.value) {
-//                    is TerminalScreenState.Content -> {
-//                        Terminal(bars = currentState.barList)
-//                    }
-//                    is TerminalScreenState.Initial -> {}
-//                }
-//            }
+            TerminalTheme {
+                val viewModel: TerminalViewModel = viewModel()
+                val screenState = viewModel.state.collectAsState()
+                when(val currentState = screenState.value) {
+                    is TerminalScreenState.Content -> {
+                        Terminal(bars = currentState.barList)
+                    }
+                    is TerminalScreenState.Initial -> {}
+                }
+            }
         }
     }
 }
